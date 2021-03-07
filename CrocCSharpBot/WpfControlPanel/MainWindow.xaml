@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfControlPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfControlPanel"
+        xmlns:vm="clr-namespace:WpfControlPanel.ViewModel"
+        xmlns:view="clr-namespace:WpfControlPanel.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button Content="События" Command="{Binding Path=OpenEventsCommand}" />
+            <Button Content="CROC" Command="{Binding Path=OpenCrocCommand}" />
+            <Button Content="Settings" Command="{Binding Path=OpenSettingsCommand}"/>
+        </StackPanel>
+
+        <ContentPresenter Grid.Column="1" Content="{Binding Path=CurrentWindow}">
+            <ContentPresenter.Resources>
+                <DataTemplate DataType="{x:Type vm:SettingVM}">
+                    <view:SettingsView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:CrocVM}">
+                    <view:CrocView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:EventsVM}">
+                    <view:EventsView/>
+                </DataTemplate>
+            </ContentPresenter.Resources>
+        </ContentPresenter>
+    </Grid>
+
+    <Window.DataContext>
+        <vm:MainWindowVM/>
+    </Window.DataContext>
+</Window>

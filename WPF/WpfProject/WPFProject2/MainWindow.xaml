@@ -1,0 +1,248 @@
+﻿<Window x:Class="WPFProject2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject2"
+        xmlns:classes="clr-namespace:WPFProject2.Classes"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <UniformGrid Rows="4" Columns="4">
+        <StackPanel>
+            <ListBox Name="List" DisplayMemberPath="Model" Background="AliceBlue">
+                <classes:Phone Model="2S" Company="Apple" Price="30000"/>
+                <classes:Phone Model="2" Company="Android" Price="20000"/>
+            </ListBox>
+            <ListBox Name="ListBox2" Background="Aquamarine" SelectionMode="Multiple">
+                <ListBoxItem Content="RRRR" Background="Azure"/>
+                <ListBoxItem Content="RDDD" Background="Bisque"/>
+            </ListBox>
+        </StackPanel>
+        <ComboBox IsEditable="True" StaysOpenOnEdit="True">
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Photos/qqq.jpg"></Image>
+                    <TextBox Text="DDDD"></TextBox>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Photos/qqq.jpg"></Image>
+                    <TextBox Text="rrrrr"></TextBox>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+        <ListView Name="phoneList" ItemsSource="{DynamicResource phones}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Model}" Header="Модель"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Header="Компания"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена"/>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="phones">
+                    <classes:Phone Model="@@@@@" Company="Apple" Price="23000"/>
+                    <classes:Phone Model="@@sdsdsdsds" Company="Android" Price="27000"/>
+                </col:ArrayList>
+            </ListView.Resources>
+        </ListView>
+        <TabControl Name="Tab">
+            <TabItem Name="TabItem1">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="10" Height="10" Fill="Black"/>
+                        <TextBlock Text="ListView"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <ListView>
+                        <TextBox Text="WWWW" BorderBrush="White"/>
+                        <TextBox Text="WWWWSSSSSSSS" BorderBrush="White"/>
+                    </ListView>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Name="TabItem2">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Blue"/>
+                        <TextBlock Text="DSDSD"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Expander Header="Expander">
+                        <ComboBox>
+                            <ComboBoxItem>
+                                <TextBlock Text="FDFD"/>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </Expander>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        <Menu Background="AntiqueWhite" Height="20" VerticalAlignment="Top">
+            <MenuItem>
+                <MenuItem.Icon>
+                    <Image Source="Photos/File.jpg" ToolTip="File"/>
+                </MenuItem.Icon>
+                <MenuItem Header="NewProject"/>
+                <MenuItem Header="Load Project">
+                    <MenuItem Header="WPF"/>
+                    <MenuItem Header="WCF"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>
+                    <TextBlock Text="HAHAHHA" Background="Aqua"></TextBlock>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <StackPanel>
+            <TextBlock Text="ContextMenu" HorizontalAlignment="Center"/>
+            <ListBox Height="50">
+                <ListBoxItem Content="Ggggg"/>
+                <ListBoxItem Content="dfdfd"/>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="qw"/>
+                        <MenuItem Header="as"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="ToolBar" HorizontalAlignment="Center" FontSize="20"/>
+            <ToolBarTray Orientation="Horizontal">
+                <ToolBar Height="35" VerticalAlignment="Top">
+                    <Button>
+                        <Image Source="Photos/3285299-orbit-orbital-satellite-shuttle-space-spaceship_106796.ico"/>
+                    </Button>
+                    <Separator/>
+                    <Button>
+                        <Image Source="Photos/astronomy_saturn_galaxy_planet_space_system_universe_icon_156874.ico"/>
+                    </Button>
+                    <TextBox Text="Поиск..." Width="100"/>
+                </ToolBar>
+            </ToolBarTray>
+        </StackPanel>
+        <ToolBarTray Orientation="Vertical">
+            <ToolBar Width="50" VerticalAlignment="Top" Height="120">
+                <Button >
+                    <Image Source="Photos/3285299-orbit-orbital-satellite-shuttle-space-spaceship_106796.ico"/>
+                </Button>
+                <Separator/>
+                <Button>
+                    <Image Source="Photos/astronomy_saturn_galaxy_planet_space_system_universe_icon_156874.ico"/>
+                </Button>
+                <TextBox Text="Поиск..."/>
+            </ToolBar>
+        </ToolBarTray>
+        <StackPanel>
+            <TextBlock Text="TreeView" HorizontalAlignment="Center"/>
+            <TreeView FontSize="10">
+                <TreeViewItem Header="DB">
+                    <TreeViewItem Header="SQL"/>
+                    <TreeViewItem Header="Oracle"/>
+                    <TreeViewItem Header="Influx"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Languages">
+                    <TreeViewItem Header="C#"/>
+                    <TreeViewItem Header="C++"/>
+                    <TreeViewItem Header="Python"/>
+                </TreeViewItem>
+            </TreeView>
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False"
+                  RowBackground="AliceBlue"
+                  AlternatingRowBackground="AntiqueWhite"
+                  Width="auto"
+                  ColumnWidth="auto">
+            <DataGrid.Items>
+                <classes:Phone Model="5S" Company="Apple" Price="30000"/>
+                <classes:Phone Model="Galaxy 3" Company="Samsung" Price="20000"/>
+            </DataGrid.Items>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Модель" Binding="{Binding Path=Model}"/>
+                <DataGridHyperlinkColumn Header="Компания" Binding="{Binding Path=Company}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Price}"/>
+                        <TextBlock Text="    рублей за штуку"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Slider and ProgressBar"
+                       HorizontalAlignment="Center"/>
+            <Slider Value="0"
+                    Minimum="0"
+                    Maximum="100"
+                    SelectionStart="0"
+                    IsSelectionRangeEnabled="True"
+                    ValueChanged="RangeBase_OnValueChanged"/>
+            <ProgressBar Minimum="0"
+                         Maximum="100"
+                         Value="70"
+                         Height="15"/>
+        </StackPanel>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Calendar"
+                           HorizontalAlignment="Center"/>
+                <Calendar FirstDayOfWeek="Monday"
+                          IsTodayHighlighted="True"
+                          SelectedDatesChanged="Calendar_OnSelectedDatesChanged"
+                          Name="Calendar1">
+                    <Calendar.BlackoutDates>
+                        <CalendarDateRange Start="11/03/2020" End="11/06/2020"></CalendarDateRange>
+                    </Calendar.BlackoutDates>
+                </Calendar>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="DatePicker"
+                           HorizontalAlignment="Center"/>
+                <DatePicker IsDropDownOpen="False"
+                            SelectedDateFormat="Long"/>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Image"
+                       HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Photos/File.jpg"
+                       Width="60"/>
+                <Image Width="60">
+                    <Image.Source>
+                        <FormatConvertedBitmap Source="Photos/File.jpg"
+                                               DestinationFormat="Gray32Float"/>
+                    </Image.Source>
+                </Image>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="InkCanvas"
+                       HorizontalAlignment="Center"/>
+            <InkCanvas HorizontalAlignment="Center"
+                       Width="100"
+                       Height="100">
+                <Image Source="Photos/astronomy_saturn_galaxy_planet_space_system_universe_icon_156874.ico"
+                       Height="100"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+                <InkCanvas.EditingMode>
+                    <InkCanvasEditingMode>EraseByPoint</InkCanvasEditingMode>
+                </InkCanvas.EditingMode>
+            </InkCanvas>
+        </StackPanel>
+    </UniformGrid>
+</Window>
+    

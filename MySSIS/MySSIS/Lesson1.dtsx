@@ -1,0 +1,774 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/12/2020 12:05:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MKRAVTSOV-NEW"
+  DTS:CreatorName="CROC\MKravtsov"
+  DTS:DTSID="{9DEA0ECF-4E06-43B6-87E1-A9E603FD2CBC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{3C627E75-33B7-4482-8A2F-198BAD322050}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract Sample Currency Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{73181D26-B930-4EC3-9506-80BE251C1CE2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="Extract Sample Currency Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Sample Currency Data\Вывод данных в БД"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Вывод данных в БД"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[Lesson1]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Sample Currency Data\Вывод данных в БД.Connections[OleDbConnection]"
+                  connectionManagerID="{D3398A87-6D34-43EB-832E-BB9A05421092}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MKRAVTSOV-NEW_SQLEXPRESS.ForMySSIS]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[EndOfDayDate]"
+                      cachedDataType="r4"
+                      cachedName="EndOfDayDate"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[EndOfDayDate]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[EndOfDayDate]" />
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[AverageRate]"
+                      cachedDataType="r4"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[AverageRate]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[CurrencyID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrencyID"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CurrencyID]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyID]" />
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[CurrencyDate]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrencyDate"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[AverageRate]"
+                      dataType="r4"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[CurrencyDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[EndOfDayDate]"
+                      dataType="r4"
+                      name="EndOfDayDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Sample Currency Data\Вывод данных в БД.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Вывод данных в БД.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Вывод данных в БД.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Вывод данных в БД.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Sample Currency Data\Извлечь образец данных валют"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Неструктурированный файл&quot;"
+              localeId="1049"
+              name="Извлечь образец данных валют"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Connections[FlatFileConnection]"
+                  connectionManagerID="{B36F2275-EE36-43C8-B3E7-ED446217AFEA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  name="Выход источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[AverageRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[AverageRate]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyID]"
+                      length="50"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyID]"
+                      name="CurrencyID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyDate]"
+                      length="50"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[CurrencyDate]"
+                      name="CurrencyDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[EndOfDayDate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[EndOfDayDate]"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[EndOfDayDate]"
+                      name="EndOfDayDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[AverageRate]"
+                      dataType="r4"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[CurrencyDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[EndOfDayDate]"
+                      dataType="r4"
+                      name="EndOfDayDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Источник &quot;Excel&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Excel&quot;"
+              name="Источник &quot;Excel&quot;"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">Лист1$</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставление между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="{10C28069-0E66-4519-80C6-E9B1F99903DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Excel Connection Manager]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;]"
+                  name="Выход источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Age]"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Salary]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Salary]"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Salary]"
+                      name="Salary"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Age]"
+                      dataType="r8"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Age]"
+                      dataType="r8"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Salary]"
+                      dataType="r8"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Salary]"
+                      name="Salary" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Назначение &quot;OLE DB&quot;"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[FromExcel]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="{D3398A87-6D34-43EB-832E-BB9A05421092}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MKRAVTSOV-NEW_SQLEXPRESS.ForMySSIS]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Age]"
+                      cachedDataType="r8"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Age]"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Salary]"
+                      cachedDataType="r8"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Salary]"
+                      lineageId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Age]"
+                      dataType="r8"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Salary]"
+                      dataType="r8"
+                      name="Salary" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Sample Currency Data.Paths[Выход источника &quot;Excel&quot;]"
+              endId="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Выход источника &quot;Excel&quot;"
+              startId="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;]" />
+            <path
+              refId="Package\Extract Sample Currency Data.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Extract Sample Currency Data\Вывод данных в БД.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Выход источника &quot;Неструктурированный файл&quot;"
+              startId="Package\Extract Sample Currency Data\Извлечь образец данных валют.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Extract Sample Currency Data"
+          TopLeft="178.333326247004,107.466667520735" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract Sample Currency Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Extract Sample Currency Data\Извлечь образец данных валют"
+          TopLeft="178.333326247004,73.6666672521168" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;"
+          TopLeft="447.499982217948,208.86666832659" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;"
+          TopLeft="454.999981919925,72.8000005785624" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Extract Sample Currency Data\Вывод данных в БД"
+          TopLeft="186.6666592492,217.533335062133" />
+        <EdgeLayout
+          Id="Package\Extract Sample Currency Data.Paths[Выход источника &quot;Excel&quot;]"
+          TopLeft="537.649982068937,114.400000578562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94.4666677480274"
+              Start="0,0"
+              End="0,86.9666677480274">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.9666677480274" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Sample Currency Data.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="299.833326247004,115.666667252117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.666666997804,101.866667810016"
+              Start="0,0"
+              End="-25.666666997804,94.3666678100162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9333339050081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.9333339050081"
+                    Point2="0,50.9333339050081"
+                    Point3="-4,50.9333339050081" />
+                  <mssgle:LineSegment
+                    End="-21.666666997804,50.9333339050081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.666666997804,50.9333339050081"
+                    Point2="-25.666666997804,50.9333339050081"
+                    Point3="-25.666666997804,54.9333339050081" />
+                  <mssgle:LineSegment
+                    End="-25.666666997804,94.3666678100162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Sample Currency Data\Назначение &quot;OLE DB&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Sample Currency Data\Источник &quot;Excel&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Sample Currency Data\Вывод данных в БД">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

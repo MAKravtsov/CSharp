@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFButton", "WPFButton\WPFButton.csproj", "{B71E13FE-06A4-4EE0-AA7D-886FC9834C3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFGrid", "WPFArrange\WPFGrid.csproj", "{F5D2F021-39BA-472F-A1A5-19417C4E222A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFGridSplitter", "WPFGridSplitter\WPFGridSplitter.csproj", "{B6CF1677-C1CB-40F1-8C3C-DAE7388DB1E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfStackPanel", "WpfStackPanel\WpfStackPanel.csproj", "{B51D9268-5BE9-4692-9AF9-64F6CECC17B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDockPanel", "WPFDockPanel\WPFDockPanel.csproj", "{8B694AD2-37BF-475B-8260-C1212451DAFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFWrapPanel", "WPFWrapPanel\WPFWrapPanel.csproj", "{94483E3E-A2D6-4A03-AB31-00458026BF7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCanvas", "WPFCanvas\WPFCanvas.csproj", "{A336DF19-C40C-4A72-8A14-0FDBE32DC50B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B71E13FE-06A4-4EE0-AA7D-886FC9834C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71E13FE-06A4-4EE0-AA7D-886FC9834C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71E13FE-06A4-4EE0-AA7D-886FC9834C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71E13FE-06A4-4EE0-AA7D-886FC9834C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D2F021-39BA-472F-A1A5-19417C4E222A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D2F021-39BA-472F-A1A5-19417C4E222A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D2F021-39BA-472F-A1A5-19417C4E222A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D2F021-39BA-472F-A1A5-19417C4E222A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6CF1677-C1CB-40F1-8C3C-DAE7388DB1E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6CF1677-C1CB-40F1-8C3C-DAE7388DB1E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6CF1677-C1CB-40F1-8C3C-DAE7388DB1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6CF1677-C1CB-40F1-8C3C-DAE7388DB1E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B51D9268-5BE9-4692-9AF9-64F6CECC17B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B51D9268-5BE9-4692-9AF9-64F6CECC17B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B51D9268-5BE9-4692-9AF9-64F6CECC17B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B51D9268-5BE9-4692-9AF9-64F6CECC17B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B694AD2-37BF-475B-8260-C1212451DAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B694AD2-37BF-475B-8260-C1212451DAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B694AD2-37BF-475B-8260-C1212451DAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B694AD2-37BF-475B-8260-C1212451DAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94483E3E-A2D6-4A03-AB31-00458026BF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94483E3E-A2D6-4A03-AB31-00458026BF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94483E3E-A2D6-4A03-AB31-00458026BF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94483E3E-A2D6-4A03-AB31-00458026BF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A336DF19-C40C-4A72-8A14-0FDBE32DC50B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A336DF19-C40C-4A72-8A14-0FDBE32DC50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A336DF19-C40C-4A72-8A14-0FDBE32DC50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A336DF19-C40C-4A72-8A14-0FDBE32DC50B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D368CF66-FC5D-44BF-BC2C-29565CADD1F8}
+	EndGlobalSection
+EndGlobal
