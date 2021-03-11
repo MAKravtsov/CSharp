@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -191,10 +192,23 @@ namespace TrainProject
             //var cl = new Prop();
             //cl.Method();
 
-            var a = new List<int> {1,2,3};
-            var b = ((int[])a.ToArray().Clone()).ToList();
+            //var a = new List<int> {1,2,3};
+            //var b = ((int[])a.ToArray().Clone()).ToList();
 
+            //object a = 5f;
+            //double b = 5;
 
+            //var c = b == 5;
+
+            string format = "dd-MM-yyyy HH:mm:ss";
+
+            var info = CultureInfo.CurrentCulture;
+            info.DateTimeFormat = DateTimeFormatInfo.InvariantInfo; 
+            CultureInfo.CurrentCulture = info;
+            
+            Console.WriteLine(DateTime.Now);
+
+            Console.ReadLine();
         }
 
         private static void Method1(int a)
