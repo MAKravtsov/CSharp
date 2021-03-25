@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes.cs" />
     <Compile Include="Experiments\ArrayTakeZero.cs" />
     <Compile Include="Experiments\ErrorInParallel.cs" />
     <Compile Include="Extensions.cs" />

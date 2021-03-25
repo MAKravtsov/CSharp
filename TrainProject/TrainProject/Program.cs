@@ -200,17 +200,43 @@ namespace TrainProject
 
             //var c = b == 5;
 
-            string format = "dd-MM-yyyy HH:mm:ss";
+            //string format = "dd-MM-yyyy HH:mm:ss";
 
-            var info = CultureInfo.CurrentCulture;
-            info.DateTimeFormat = DateTimeFormatInfo.InvariantInfo; 
-            CultureInfo.CurrentCulture = info;
+            //var info = CultureInfo.CurrentCulture;
+            //info.DateTimeFormat = DateTimeFormatInfo.InvariantInfo; 
+            //CultureInfo.CurrentCulture = info;
             
-            Console.WriteLine(DateTime.Now);
+            //Console.WriteLine(DateTime.Now);
+
+            //var a = new List<int> { 1, 2, 3};
+            //var b = a.ToArray();
+
+            //b[1] = 15;
+
+            //Console.ReadLine();
+
+            //var a = ReverseNumber(506);
+
+            //var d = new D();
+            //var c = new C();
+            //C.a = 5;
+            //Console.WriteLine(D.a);
+            //Console.WriteLine(C.a);
+
+            var a = new List<S>() {new S(){s1 = "aaaaa", s2 = 5}, new S()};
+            var b = new S[a.Count];
+            Array.Copy(a.ToArray(), b, a.Count);
+            b[1].s1 = "aaaa";
 
             Console.ReadLine();
         }
 
+        public class S
+        {
+            public string s1;
+            public int s2;
+        }
+        
         private static void Method1(int a)
         {
             if (Monitor.IsEntered(Dict))
@@ -231,16 +257,20 @@ namespace TrainProject
 
         public static int ReverseNumber(int a)
         {
-            int result = 0;
-            while (a != 0)
-            {
-                var ost = a % 10;
-                result = result * 10 + ost;
-                a = (a / 10);
-            }
-            //result = result * 10 + a;
+            try {
+                int result = 0;
+                while (a != 0) {
+                    var ost = a % 10;
+                    result = result * 10 + ost;
+                    a = (a / 10);
+                }
+                //result = result * 10 + a;
 
-            return result;
+                return result;
+            }
+            finally {
+                Console.WriteLine("1111");
+            }
         }
     }
 
