@@ -205,7 +205,7 @@ namespace TrainProject
             //var info = CultureInfo.CurrentCulture;
             //info.DateTimeFormat = DateTimeFormatInfo.InvariantInfo; 
             //CultureInfo.CurrentCulture = info;
-            
+
             //Console.WriteLine(DateTime.Now);
 
             //var a = new List<int> { 1, 2, 3};
@@ -223,12 +223,82 @@ namespace TrainProject
             //Console.WriteLine(D.a);
             //Console.WriteLine(C.a);
 
-            var a = new List<S>() {new S(){s1 = "aaaaa", s2 = 5}, new S()};
-            var b = new S[a.Count];
-            Array.Copy(a.ToArray(), b, a.Count);
-            b[1].s1 = "aaaa";
+            //var a = new List<S>() {new S(){s1 = "aaaaa", s2 = 5}, new S()};
+            //var b = new S[a.Count];
+            //Array.Copy(a.ToArray(), b, a.Count);
+            //b[1].s1 = "aaaa";
+
+            //object b = null;
+            //var a = (double) b;
+
+            //int a = 5;
+            //Console.WriteLine(Convert.ToDouble(a));
+
+            var dict = new List<int>();
+            dict.Add(2);
+            TrainRef(dict);
+
+            //Meth();
 
             Console.ReadLine();
+        }
+
+        static void TrainRef(List<int> list)
+        {
+            list.ToList().Add(1);
+        }
+
+        static void Meth()
+        {
+            Task.Factory.StartNew(() => {
+                try {
+                    int[] a = null;
+                    int m = a[0];
+                }
+                catch (Exception e) {
+                    Console.WriteLine(e);
+                }
+            });
+        }
+        
+        private static object GetValue(object val)
+        {
+            try {
+                switch (val) {
+                    case null: return null;
+
+                    case bool toBool: return toBool;
+
+                    case int _:
+                    case short _:
+                    case ushort _:
+                    case byte _:
+                    case sbyte _:
+                        return Convert.ToInt32(val);
+
+                    case uint toUint: return toUint;
+
+                    case long toLong: return toLong;
+
+                    case ulong toUlong: return toUlong;
+
+                    case string _:
+                    case char _:
+                        return Convert.ToString(val);
+
+                    case double _:
+                    case float _:
+                    case decimal _:
+                        return Convert.ToDouble(val);
+
+                    case DateTime toDateTine: return toDateTine;
+
+                    default: throw new Exception($"Неизвестный тип данных: {val.GetType()}");
+                }
+            }
+            catch (Exception ex) {
+                return null;
+            }
         }
 
         public class S
