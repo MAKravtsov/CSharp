@@ -13,7 +13,7 @@ namespace Diploma
     class Help
     {
         // Расположение папки Gusek
-        public static string Gusek = @"C:\Users\MKravtsov\Desktop\Учеба\Курсач 11 сем\Part Select";
+        public static string Gusek = @"C:\Users\mkravtsov\Desktop\Учеба\12 сем\Диплом\разработка";
 
         // Имя файла, в который сохраняем
         public static string Name = @"\ViborEquipment.txt";

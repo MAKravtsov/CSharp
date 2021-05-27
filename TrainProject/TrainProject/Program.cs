@@ -234,12 +234,42 @@ namespace TrainProject
             //int a = 5;
             //Console.WriteLine(Convert.ToDouble(a));
 
-            var dict = new List<int>();
-            dict.Add(2);
-            TrainRef(dict);
+            //var dict = new List<int>();
+            //dict.Add(2);
+            //TrainRef(dict);
 
             //Meth();
 
+            //object a = 4;
+            //object b = a;
+            //b = "qw";
+
+            //var dict = new Dictionary<string, object>();
+            //dict.Add("1", 1);
+            //dict.Add("2", 2);
+
+            //Console.WriteLine(DateTime.Now);
+            
+            //Task.Factory.StartNew(() => {
+            //    lock (dict.First().Value) {
+            //        Thread.Sleep(2000);
+            //        Console.WriteLine($"1 - {DateTime.Now}");
+            //    }
+            //});
+
+            //Task.Factory.StartNew(() => {
+            //    lock (dict.First().Value) {
+            //        Thread.Sleep(5000);
+            //        Console.WriteLine($"2 - {DateTime.Now}");
+            //    }
+            //});
+
+            //var dict = new ConcurrentDictionary<string, int>();
+            //dict.TryAdd("1", 1);
+            //dict.TryAdd("1", 2);
+
+            var dop = new Dop();
+            
             Console.ReadLine();
         }
 
@@ -372,6 +402,15 @@ namespace TrainProject
         public int d => 5;
 
         public string Desc => "DOP";
+
+        public Dop()
+        {
+            try {
+                throw new Exception();
+            }
+            catch (Exception e) {
+            }
+        }
     }
 
     public class SomeClass

@@ -43,11 +43,26 @@ namespace Grouping
             //var group5 = new Group("3", 11);
             //var groups = new Group[] { group1, group2, group3, group4, group5 };
 
-            //var groups = new List<Group>();
-            //string ras = "Цех расточной обработки";
-            //string sm = "Смешанный цех";
-            //string fr = "Цех фрезерной обработки";
-            //string tok_sv = "Цех токарно-сверлильной обработки";
+            var groups = new List<Group>();
+            string ras = "Цех расточной обработки";
+            string sm = "Смешанный цех";
+            string fr = "Цех фрезерной обработки";
+            string tok_sv = "Цех токарно-сверлильной обработки";
+
+            groups.AddRange(DetailToGroup("Вал", $"{sm}", 60, 1));
+            groups.AddRange(DetailToGroup("Корпус", $"{fr}|{tok_sv}|{sm}", 70, 1));
+            groups.AddRange(DetailToGroup("Втулка", $"{ras}|{tok_sv}", 50, 1));
+            groups.AddRange(DetailToGroup("Ступица", $"{fr}|{sm}", 60, 1));
+            groups.AddRange(DetailToGroup("Стакан", $"{ras}|{tok_sv}|{sm}", 80, 1));
+            groups.AddRange(DetailToGroup("Колесо", $"{ras}|{fr}|{sm}", 80, 1));
+            groups.AddRange(DetailToGroup("Рычаг", $"{ras}|{tok_sv}|{sm}|{fr}", 60, 1));
+            groups.AddRange(DetailToGroup("Штуцер", $"{sm}", 40, 1));
+            groups.AddRange(DetailToGroup("Клапан", $"{sm}|{ras}|{tok_sv}", 60, 1));
+            groups.AddRange(DetailToGroup("Крыша", $"{fr}|{sm}", 60, 1));
+            groups.AddRange(DetailToGroup("Опора", $"{sm}|{ras}|{tok_sv}", 70, 1));
+            groups.AddRange(DetailToGroup("Блок", $"{sm}|{ras}|{tok_sv}", 60, 1));
+            groups.AddRange(DetailToGroup("Гильза", $"{tok_sv}|{sm}", 20, 1));
+            groups.AddRange(DetailToGroup("Прокладка", $"{sm}", 30, 1));
 
             //groups.AddRange(DetailToGroup("Вал",$"{sm}", 195, 50));
             //groups.AddRange(DetailToGroup("Корпус", $"{fr}|{tok_sv}|{sm}", 225, 30));
@@ -60,19 +75,19 @@ namespace Grouping
             //groups.AddRange(DetailToGroup("Клапан", $"{sm}|{ras}|{tok_sv}", 35, 250));
             //groups.AddRange(DetailToGroup("Крыша", $"{fr}|{sm}", 330, 35));
 
-            var group1 = new Group("detail1","2|3|5|1|4", 165);
-            var group2 = new Group("detail2", "3|5|4", 160);
-            var group3 = new Group("detail3", "1|2|4|5|3", 175);
-            var group4 = new Group("detail4", "1|3|5|4|2", 185);
-            var group5 = new Group("detail5", "1|2", 75);
-            var group6 = new Group("detail6", "3|5", 85);
-            var group7 = new Group("detail7", "1|4", 100);
-            var group8 = new Group("detail8", "1|2|3", 140);
-            var group9 = new Group("detail9", "2|5", 105);
-            var group10 = new Group("detail10", "4|5|1|2", 160);
-            var group11 = new Group("detail11", "4|5", 80);
-            var group12 = new Group("detail12", "1", 45);
-            var groups = new Group[] { group1, group2, group3, group4, group5, group6, group7, group8, group9, group10, group11, group12 };
+            //var group1 = new Group("detail1","2|3|5|1|4", 165);
+            //var group2 = new Group("detail2", "3|5|4", 160);
+            //var group3 = new Group("detail3", "1|2|4|5|3", 175);
+            //var group4 = new Group("detail4", "1|3|5|4|2", 185);
+            //var group5 = new Group("detail5", "1|2", 75);
+            //var group6 = new Group("detail6", "3|5", 85);
+            //var group7 = new Group("detail7", "1|4", 100);
+            //var group8 = new Group("detail8", "1|2|3", 140);
+            //var group9 = new Group("detail9", "2|5", 105);
+            //var group10 = new Group("detail10", "4|5|1|2", 160);
+            //var group11 = new Group("detail11", "4|5", 80);
+            //var group12 = new Group("detail12", "1", 45);
+            //var groups = new Group[] { group1, group2, group3, group4, group5, group6, group7, group8, group9, group10, group11, group12 };
 
             var allGroups = new AllGroups(groups.ToArray());
 

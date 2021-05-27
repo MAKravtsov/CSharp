@@ -19,12 +19,13 @@ namespace Diploma
 
             // Столбцы таблицы
 
-            DataGridViewEquipment.ColumnCount = 5;
+            DataGridViewEquipment.ColumnCount = 6;
             DataGridViewEquipment.Columns[0].HeaderCell.Value = "Стоимость обслуживания еденицы оборудования";
             DataGridViewEquipment.Columns[1].HeaderCell.Value = "Стоимость еденицы оборудования";
             DataGridViewEquipment.Columns[2].HeaderCell.Value = "Время, выделаемое на работу оборудования";
             DataGridViewEquipment.Columns[3].HeaderCell.Value = "Средний коэффициент загрузки станка";
-            DataGridViewEquipment.Columns[4].HeaderCell.Value = "Максимальное количество оборудования";
+            DataGridViewEquipment.Columns[4].HeaderCell.Value = "Количество оборудования на производстве";
+            DataGridViewEquipment.Columns[5].HeaderCell.Value = "Максимальное количество оборудования";
 
             // Строки таблицы
             DataGridViewEquipment.RowCount = Help.Equipment.Length;
