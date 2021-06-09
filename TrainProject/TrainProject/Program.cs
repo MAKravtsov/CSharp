@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -268,9 +269,27 @@ namespace TrainProject
             //dict.TryAdd("1", 1);
             //dict.TryAdd("1", 2);
 
-            var dop = new Dop();
+
+            //var a = new List<BB>() { new BB("aaa"), new BB("bbb") };
+            
+            //FGF(a);
+
+            bool a = true;
+            var b = Convert.ToDouble(a);
             
             Console.ReadLine();
+        }
+
+        static void FGF(List<BB> bb)
+        {
+            foreach (var b in bb) {
+                b.str = "1111";
+            }
+        }
+        
+        static void b_Method(BB b)
+        {
+            b.str = "qwe";
         }
 
         static void TrainRef(List<int> list)
@@ -468,6 +487,21 @@ namespace TrainProject
                     //Thread.Sleep(1000);
                 }
             }
+        }
+    }
+
+    public class AA
+    {
+        public BB bb;
+    }
+    
+    public class BB
+    {
+        public string str;
+
+        public BB(string s)
+        {
+            str = s;
         }
     }
 }
